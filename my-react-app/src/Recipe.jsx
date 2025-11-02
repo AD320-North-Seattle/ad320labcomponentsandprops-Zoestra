@@ -3,9 +3,17 @@ function Recipe(props) {
 		<div className="recipe">
 			<h2>{props.recipe.name}</h2>
 			<h3>Ingredients</h3>
-			<p>{props.recipe.ingredients}</p>
+			<ul>
+				{props.recipe.ingredients.map((ingredient, index) => (
+					<li key={index}>{ingredient}</li>
+				))}
+			</ul>
 			<h3>Instructions</h3>
-			<p>{props.recipe.instructions}</p>
+			<ul>
+				{props.recipe.instructions.map((step, index) => (
+					<li key={index}>{step}</li>
+				))}
+			</ul>
 		</div>
 	);
 }
